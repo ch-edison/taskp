@@ -1,0 +1,14 @@
+{% load rest_framework %}
+
+<html><body>
+
+<h1>Upload</h1>
+
+<form action="/snippets/post/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="Save">
+</form>
+<h2>Resolution:{{serializer.image_width.value}} x {{serializer.image_height.value}} px</h2>
+
+</body></html>
